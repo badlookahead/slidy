@@ -1,0 +1,72 @@
+:root {
+    --bg: #151515;
+    --text: white;
+    --modal: none;
+    --x: 4;
+    --y: 4;
+}
+
+body {
+    margin: 0;
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Work Sans', sans-serif;
+}
+
+#container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+#game {
+    background: var(--text);
+    color: var(--bg);
+    font-weight: 500;
+    width: 20rem;
+    height: 20rem;
+    border-radius: 2rem;
+    display: grid;
+    grid-template-columns: var(--y);
+    grid-template-rows: var(--x);
+    overflow: hidden;
+}
+
+.tile {
+    text-align: center;
+    user-select: none;
+    cursor: pointer;
+}
+
+.tile:hover {
+    filter: brightness(-10);
+}
+
+.button {
+    cursor: pointer;
+    user-select: none;
+    text-decoration: underline solid;
+}
+
+.button:hover {
+    text-decoration: underline solid 2px;
+}
+
+#settings-modal {
+    width: 30vw;
+    height: 40vh;
+    border: 10px solid transparent;
+    border-radius: 0.5rem;
+    background: #c0c0c0;
+}
+
+#settings-modal::backdrop {
+    opacity: 0%;
+}
+
+#close-modal {
+    top: 0%;
+    position: absolute;
+    left: 95%;
+}
