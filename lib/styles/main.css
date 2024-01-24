@@ -26,7 +26,7 @@ body {
     font-weight: 500;
     width: 20rem;
     height: 20rem;
-    border-radius: 2rem;
+    border-radius: 0.5rem;
     display: grid;
     grid-template-columns: var(--y);
     grid-template-rows: var(--x);
@@ -37,6 +37,7 @@ body {
     text-align: center;
     user-select: none;
     cursor: pointer;
+    border-radius: 0.5rem;
 }
 
 .tile:hover {
