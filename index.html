@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="lib/styles/main.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="lib/img/Slipdee.png" type="image/png">
     <title>slidy puzzle thing</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,16 +15,20 @@
         <div id="main">
             <div id="game">
             </div>
-            <a id="settings-button" class="button">settings</a>
+            <a id="settings-button" class="button" tabindex="0">settings</a>
         </div>
     </div>
-    <dialog id="settings-modal">
+    <dialog id="settings-modal" tabindex="-1">
         <div>
-            <h1 id="settings-header">cool shit</h1>
-            <label for="theme">theme: </label><a id="theme" class="button">dark</a><br/>
-            <label for="hover">hover: </label><a id="hover" class="button">off</a>
+            <h1 id="settings-header">settings</h1>
+            <span>theme: </span><a id="theme" class="button">dark</a><br>
+            <span>hover: </span><a id="hover" class="button">off</a><br>
+            <label for="radius">tile corner radius: </label><input type="number" id="radius" class="button" style="width: 2.5rem;" min="0" value="8"></a><label for="radius"> px</label><br><br>
+            <h3 class="settings-sub">advanced: </h3>
+            <a id="clear" class="button">clear cache</a><br>
+            <label for="bright">brightness threshold: </label><input type="number" id="bright" class="button" style="width: 2.5rem;" min="0" max="255" value="128" onblur="if(this.value>255){this.value=255} if(this.value<0){this.value=0}"></a>
         </div>
-        <label id="close-modal" class="button" for="settings-header">x</label>
+        <span id="close-modal" class="button" tabindex="0">x</span>
     </dialog>
     <script src="lib/scripts/fish.js"></script>
     <script src="lib/scripts/settings.js"></script>

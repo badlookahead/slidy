@@ -4,6 +4,7 @@
     --modal: none;
     --x: 4;
     --y: 4;
+    --radius: 0.5rem;
 }
 
 body {
@@ -26,7 +27,7 @@ body {
     font-weight: 500;
     width: 20rem;
     height: 20rem;
-    border-radius: 0.5rem;
+    border-radius: var(--radius);
     display: grid;
     grid-template-columns: var(--y);
     grid-template-rows: var(--x);
@@ -36,12 +37,32 @@ body {
 .tile {
     text-align: center;
     user-select: none;
-    cursor: pointer;
-    border-radius: 0.5rem;
 }
 
-.tile:hover {
+.tile:not(.blank-tile) {
+    cursor: pointer;
+    border-radius: var(--radius);
+}
+
+.tile:not(.blank-tile):hover {
     filter: brightness(-10);
+}
+
+.tile-label {
+    margin: 0;
+    color: var(--bg);
+}
+
+.tile-label.dark {
+    color: whitesmoke;
+}
+
+.tile-label.light {
+    color: #151515;
+}
+
+span.tile-label {
+    opacity: 25%;
 }
 
 .button {
@@ -64,6 +85,15 @@ body {
 
 #settings-modal::backdrop {
     opacity: 0%;
+}
+
+.settings-sub {
+    margin: 0;
+}
+
+#settings-modal input[type=number]::-webkit-inner-spin-button, 
+#settings-modal input[type=number]::-webkit-outer-spin-button {  
+   opacity: 1;
 }
 
 #close-modal {
