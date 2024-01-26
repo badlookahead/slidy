@@ -5,6 +5,8 @@
     --x: 4;
     --y: 4;
     --radius: 0.5rem;
+    --tile-font: 250%;
+    --border: 2px;
 }
 
 body {
@@ -25,8 +27,8 @@ body {
     background: var(--text);
     color: var(--bg);
     font-weight: 500;
-    width: 20rem;
-    height: 20rem;
+    width: 320px;
+    height: 320px;
     border-radius: var(--radius);
     display: grid;
     grid-template-columns: var(--y);
@@ -35,22 +37,31 @@ body {
 }
 
 .tile {
-    text-align: center;
     user-select: none;
+    overflow: hidden;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .tile:not(.blank-tile) {
     cursor: pointer;
     border-radius: var(--radius);
+    transition: all;
+    border: var(--border) solid var(--bg);
 }
 
-.tile:not(.blank-tile):hover {
-    filter: brightness(-10);
+.tile:not(.blank-tile).hover:hover {
+    opacity: 80%;
 }
 
 .tile-label {
     margin: 0;
     color: var(--bg);
+    font-size: var(--tile-font);
+    pointer-events: none;
 }
 
 .tile-label.dark {
@@ -62,7 +73,14 @@ body {
 }
 
 span.tile-label {
-    opacity: 25%;
+    opacity: 50%;
+    margin: 0;
+    font-size: calc(var(--tile-font) / 2.5);
+    pointer-events: none;
+}
+
+.hidden {
+    display: none;
 }
 
 .button {
