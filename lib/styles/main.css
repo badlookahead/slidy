@@ -1,6 +1,12 @@
 :root {
     --bg: #151515;
     --text: white;
+    --bg-10: rgba(21, 21, 21, 0.1);
+    --text-10: rgba(255, 255, 255, 0.1);
+    --bg-25: rgba(21, 21, 21, 0.1);
+    --text-25: rgba(255, 255, 255, 0.1);
+    --bg-50: rgba(21, 21, 21, 0.1);
+    --text-50: rgba(255, 255, 255, 0.1);
     --modal: none;
     --x: 4;
     --y: 4;
@@ -50,7 +56,7 @@ body {
     cursor: pointer;
     border-radius: var(--radius);
     transition: all;
-    border: var(--border) solid var(--bg);
+    border: var(--border) solid var(--bg-50);
 }
 
 .tile:not(.blank-tile).hover:hover {
